@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1>Taskmanager</h1>
+            <h2>Add a task</h2>
+            form to add task here
+        </div>
+        <div class="col-12">
+            <h2>To do</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Due</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in to_do_tasks %}
+                    {% if task.due_date < today %}
+                    <tr class="table-danger">
+                    {% else %}
+                    <tr>
+                    {% endif %}
+                        <th scope="row">{{ task.due_date }}</th>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.category }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12">
+            <h2>Done</h2>
+            <table class="table table-secondary table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Due</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in done_tasks %}
+                    <tr>
+                        <th scope="row">{{ task.due_date }}</th>
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.category }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+{% endblock %}
