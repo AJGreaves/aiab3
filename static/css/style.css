@@ -3,7 +3,33 @@
 body {
     font-family: 'Inria Sans', sans-serif;
     font-size: 16px;
-    line-height: 1.5;
     color: #333;
     background-color: #f8f9fa;
+}
+
+.action-icon {
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.checkbox-btn {
+    color: rgb(41, 150, 41);
+}
+
+.checkbox-btn:hover {
+    color: rgb(0, 93, 0);
+}
+
+.delete-btn {
+    color: rgb(150, 41, 41);
+}
+
+.delete-btn:hover {
+    color: rgb(93, 0, 0);
+}
+
+#add-task-btn {
+    margin-top: 31px;
 }
