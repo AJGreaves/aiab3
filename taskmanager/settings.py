@@ -34,7 +34,6 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST')]
-print(ALLOWED_HOSTS)
 
 # Application definition
 
